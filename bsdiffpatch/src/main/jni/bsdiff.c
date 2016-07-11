@@ -425,8 +425,8 @@ JNIEXPORT jint JNICALL hdiff(JNIEnv *env, jobject thiz, jstring oldFilePath, jst
 	(*env)->ReleaseStringUTFChars(env, oldFilePath, argv[1]);
 	(*env)->ReleaseStringUTFChars(env, newFilePath, argv[2]);
 	(*env)->ReleaseStringUTFChars(env, diffFilePath, argv[3]);
-	(*env)->DeleteLocalRef(env,argv[1]);
-	(*env)->DeleteLocalRef(env,argv[2]);
-	(*env)->DeleteLocalRef(env,argv[3]);
+//	(*env)->DeleteLocalRef(env,argv[1]);
+//	(*env)->DeleteLocalRef(env,argv[2]);
+//	(*env)->DeleteLocalRef(env,argv[3]);
 	return ret;
 }
