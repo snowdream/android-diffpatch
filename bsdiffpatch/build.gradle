@@ -18,7 +18,6 @@ model {
 
     android.ndk {
         moduleName ="bsdiffpatch"
-        stl "stlport_static"
     }
 
     android.buildTypes {

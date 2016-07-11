@@ -7,7 +7,7 @@
 #include "native_diff.h"
 #include "native_patch.h"
 
-#define JNIREG_CLASS "com/example/hellojni/HelloJni"//指定要注册的类
+#define JNIREG_CLASS "com/github/snowdream/bsdiffpatch/BSDiffPatch"//指定要注册的类
 
 /**
 * Table of methods associated with a single class.
