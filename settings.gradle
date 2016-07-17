@@ -1,1 +1,1 @@
-include ':app', ':diffpath', ':bsdiffpatch'
+include ':app', ':diffpath', ':bsdiffpatch', ':hdiffpatch'
