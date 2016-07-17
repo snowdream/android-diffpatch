@@ -1,0 +1,11 @@
+//
+// Created by yanghui.yangh on 2016-07-11.
+//
+
+#ifndef ANDROID_DIFFPATCH_NATIVE_RESULT_H
+#define ANDROID_DIFFPATCH_NATIVE_RESULT_H
+
+#define SUCCESS 0
+#define ERROR 1
+
+#endif //ANDROID_DIFFPATCH_NATIVE_RESULT_H
