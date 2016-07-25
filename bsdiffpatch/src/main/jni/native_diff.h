@@ -11,7 +11,7 @@
 extern "C" {
 #endif
 
-JNIEXPORT jint JNICALL hdiff(JNIEnv *env, jobject thiz, jstring oldFilePath, jstring newFilePath,
+JNIEXPORT jint JNICALL bsdiff(JNIEnv *env, jobject thiz, jstring oldFilePath, jstring newFilePath,
                                 jstring diffFilePath);
 
 #ifdef __cplusplus

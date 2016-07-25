@@ -205,7 +205,7 @@ int applypatch(int argc,char * argv[])
 	return 0;
 }
 
-JNIEXPORT jint JNICALL hpatch(JNIEnv *env, jobject thiz, jstring oldFilePath,
+JNIEXPORT jint JNICALL bspatch(JNIEnv *env, jobject thiz, jstring oldFilePath,
 							  jstring diffFilePath, jstring newFilePath){
 	int argc = 4;
 	char * argv[argc];

@@ -19,9 +19,9 @@ public class BSDiffPatch implements IDiffPatch {
         SoLoader.loadLibrary(context, "bsdiffpatch");
     }
 
-    public native int hdiff(String oldFilePath, String newFilePath, String diffFilePath);
+    public native int bsdiff(String oldFilePath, String newFilePath, String diffFilePath);
 
-    public native int hpatch(String oldFilePath, String diffFilePath, String newFilePath);
+    public native int bspatch(String oldFilePath, String diffFilePath, String newFilePath);
 
     @Override
     public int diff(String oldFilePath, String newFilePath, String diffFilePath) {
@@ -31,7 +31,7 @@ public class BSDiffPatch implements IDiffPatch {
         File newFile = new File(oldFilePath);
         if (!newFile.exists() || newFile.length() == 0) return IDiffPatch.ERROR;
 
-        return hdiff(oldFilePath,newFilePath,diffFilePath);
+        return bsdiff(oldFilePath,newFilePath,diffFilePath);
     }
 
     @Override
@@ -42,6 +42,6 @@ public class BSDiffPatch implements IDiffPatch {
         File newFile = new File(oldFilePath);
         if (!newFile.exists() || newFile.length() == 0) return IDiffPatch.ERROR;
 
-        return hpatch(oldFilePath,diffFilePath,newFilePath);
+        return bspatch(oldFilePath,diffFilePath,newFilePath);
     }
 }

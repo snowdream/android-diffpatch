@@ -11,7 +11,7 @@
 extern "C" {
 #endif
 
-JNIEXPORT jint JNICALL hpatch(JNIEnv *env, jobject thiz, jstring oldFilePath,
+JNIEXPORT jint JNICALL bspatch(JNIEnv *env, jobject thiz, jstring oldFilePath,
                                  jstring diffFilePath, jstring newFilePath);
 
 

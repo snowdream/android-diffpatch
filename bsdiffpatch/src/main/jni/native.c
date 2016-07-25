@@ -13,8 +13,8 @@
 * Table of methods associated with a single class.
 */
 static JNINativeMethod gMethods[] = {
-        {"hdiff", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I", (void *) hdiff},
-        {"hpatch", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I", (void *) hpatch}
+        {"bsdiff", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I", (void *) bsdiff},
+        {"bspatch", "(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)I", (void *) bspatch}
 };
 
 /*

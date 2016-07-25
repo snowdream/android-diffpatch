@@ -39,6 +39,8 @@
 #include <stdlib.h>
 #include <jni.h>
 #include "HDiff/diff.h"
+#include "native_diff.h"
+
 typedef unsigned char   TByte;
 typedef size_t          TUInt;
 typedef ptrdiff_t       TInt;

@@ -405,7 +405,7 @@ int genpatch(int argc,char *argv[])
 	return 0;
 }
 
-JNIEXPORT jint JNICALL hdiff(JNIEnv *env, jobject thiz, jstring oldFilePath, jstring newFilePath,
+JNIEXPORT jint JNICALL bsdiff(JNIEnv *env, jobject thiz, jstring oldFilePath, jstring newFilePath,
 							 jstring diffFilePath){
 	int argc = 4;
 	char * argv[argc];
