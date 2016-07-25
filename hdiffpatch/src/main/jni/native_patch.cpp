@@ -50,7 +50,7 @@ inline static hpatch_StreamPos_t getFilePos64(FILE* file){
     int rt=fgetpos(file, &pos); //support 64bit?
     assert(rt==0);
 #if defined(__linux) || defined(__linux__)
-    return pos.__pos;
+    return pos;
 #else //windows macosx
     return pos;
 #endif
@@ -60,7 +60,7 @@ inline void setFilePos64(FILE* file,hpatch_StreamPos_t seekPos){
     fpos_t pos;
 #if defined(__linux) || defined(__linux__)
     memset(&pos, 0, sizeof(pos));
-    pos.__pos=seekPos; //safe?
+    pos=seekPos; //safe?
 #else //windows macosx
     pos=seekPos;
 #endif

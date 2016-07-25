@@ -18,6 +18,7 @@ model {
 
     android.ndk {
         moduleName ="hdiffpatch"
+        cppFlags.add("-fexceptions")
         stl "stlport_static"
     }
 
