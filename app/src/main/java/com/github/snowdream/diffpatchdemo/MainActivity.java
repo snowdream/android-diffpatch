@@ -12,15 +12,32 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
  */
-#include <string.h>
-#include <jni.h>
+package com.github.snowdream.diffpatchdemo;
 
-/* This is a trivial JNI example where we use a native method
- * to return a new VM String. See the corresponding Java source
- * file located at:
- *
- *   apps/samples/hello-jni/project/src/com/example/hellojni/HelloJni.java
- */
-JNIEXPORT jstring JNICALL native_hello( JNIEnv* env, jobject thiz );
+import android.app.Activity;
+import android.widget.TextView;
+import android.os.Bundle;
+
+
+public class MainActivity extends Activity
+{
+    /** Called when the activity is first created. */
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+        super.onCreate(savedInstanceState);
+
+        /* Create a TextView and set its content.
+         * the text is retrieved by calling a native
+         * function.
+         */
+        TextView  tv = new TextView(this);
+        tv.setText("test" );
+        setContentView(tv);
+    }
+
+
+
+
+}
