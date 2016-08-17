@@ -6,7 +6,7 @@ model {
         buildToolsVersion = "23.0.2"
 
         defaultConfig.with {
-            minSdkVersion.apiLevel    = 9
+            minSdkVersion.apiLevel = 9
             targetSdkVersion.apiLevel = 23
         }
     }
@@ -17,7 +17,7 @@ model {
 //    }
 
     android.ndk {
-        moduleName ="bsdiffpatch"
+        moduleName = "bsdiffpatch"
     }
 
     android.buildTypes {
@@ -28,7 +28,7 @@ model {
     }
 
     android.productFlavors {
-        create ("arm7") {
+        create("arm7") {
             ndk.abiFilters.add("armeabi-v7a")
         }
     }

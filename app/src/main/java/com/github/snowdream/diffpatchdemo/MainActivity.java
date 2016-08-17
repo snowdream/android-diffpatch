@@ -16,13 +16,20 @@
 package com.github.snowdream.diffpatchdemo;
 
 import android.app.Activity;
+import android.os.AsyncTask;
+import android.os.Environment;
 import android.widget.TextView;
 import android.os.Bundle;
+
+import com.github.snowdream.bsdiffpatch.BSDiffPatch;
+import com.github.snowdream.diffpath.IDiffPatch;
 
 
 public class MainActivity extends Activity
 {
-    /** Called when the activity is first created. */
+    private static final String SD_PATH = Environment.getExternalStorageDirectory().getPath();
+
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -35,6 +42,22 @@ public class MainActivity extends Activity
         TextView  tv = new TextView(this);
         tv.setText("test" );
         setContentView(tv);
+
+        new UpdateTask().execute();
+    }
+
+
+    private class UpdateTask extends AsyncTask<Void,Void,Void> {
+
+        @Override
+        protected Void doInBackground(Void... params) {
+            IDiffPatch diffPatch = new BSDiffPatch();
+//            diffPatch.diff()
+
+            String SD_PATH = Environment.getExternalStorageDirectory().getPath();
+
+            return null;
+        }
     }
 
 
