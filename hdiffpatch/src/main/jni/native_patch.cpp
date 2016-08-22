@@ -297,13 +297,13 @@ JNIEXPORT jint JNICALL hpatch(JNIEnv *env, jobject thiz, jstring oldFilePath,
     int argc = 4;
     char * argv[argc];
     argv[0] = "hpatch";
-    argv[1] = (char*) (env->GetStringUTFChars( oldFilePath, 0));
-    argv[2] = (char*) (env->GetStringUTFChars(newFilePath, 0));
-    argv[3] = (char*) (env->GetStringUTFChars(diffFilePath, 0));
+    argv[1] = (char*) (env->GetStringUTFChars(oldFilePath, 0));
+    argv[2] = (char*) (env->GetStringUTFChars(diffFilePath, 0));
+    argv[3] = (char*) (env->GetStringUTFChars(newFilePath, 0));
 
     printf("old apk = %s \n", argv[1]);
-    printf("patch = %s \n", argv[3]);
-    printf("new apk = %s \n", argv[2]);
+    printf("patch = %s \n", argv[2]);
+    printf("new apk = %s \n", argv[3]);
 
     int ret = applypatch(argc, argv);
 
