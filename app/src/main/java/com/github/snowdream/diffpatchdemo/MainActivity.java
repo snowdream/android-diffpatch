@@ -23,7 +23,7 @@ import android.widget.TextView;
 import android.os.Bundle;
 
 import com.github.snowdream.bsdiffpatch.BSDiffPatch;
-import com.github.snowdream.diffpath.IDiffPatch;
+import com.github.snowdream.diffpatch.IDiffPatch;
 import com.github.snowdream.hdiffpatch.HDiffPatch;
 
 import java.io.File;

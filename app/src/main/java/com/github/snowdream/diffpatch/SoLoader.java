@@ -1,4 +1,4 @@
-package com.github.snowdream.diffpath;
+package com.github.snowdream.diffpatch;
 
 import android.content.Context;
 import android.util.Log;

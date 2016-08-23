@@ -15,7 +15,7 @@ sourceSets {
 }
 ```
 1. copy `app/libs/armeabi-v7a/libbsdiffpatch.so` to your project.
-1. copy `app/src/main/java/com/github/snowdream/bsdiffpatch` and `app/src/main/java/com/github/snowdream/diffpath` to your project, with the exact package and filename.
+1. copy `app/src/main/java/com/github/snowdream/bsdiffpatch` and `app/src/main/java/com/github/snowdream/diffpatch` to your project, with the exact package and filename.
 
 
 ### HDiffPatch
@@ -30,7 +30,7 @@ sourceSets {
 }
 ```
 1. copy `app/libs/armeabi-v7a/libhdiffpatch.so` to your project.
-1. copy `app/src/main/java/com/github/snowdream/hdiffpatch` and `app/src/main/java/com/github/snowdream/diffpath` to your project, with the exact package and filename.
+1. copy `app/src/main/java/com/github/snowdream/hdiffpatch` and `app/src/main/java/com/github/snowdream/diffpatch` to your project, with the exact package and filename.
 
 
 ## Usage

@@ -3,8 +3,8 @@ package com.github.snowdream.hdiffpatch;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
-import com.github.snowdream.diffpath.IDiffPatch;
-import com.github.snowdream.diffpath.SoLoader;
+import com.github.snowdream.diffpatch.IDiffPatch;
+import com.github.snowdream.diffpatch.SoLoader;
 
 import java.io.File;
 
