@@ -18,6 +18,7 @@ package com.github.snowdream.diffpatchdemo;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Environment;
+import android.util.TimingLogger;
 import android.widget.TextView;
 import android.os.Bundle;
 
@@ -31,6 +32,8 @@ import java.io.File;
 public class MainActivity extends Activity
 {
 
+
+    private static final String TAG = "SnowdreamFramework";
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -62,15 +65,18 @@ public class MainActivity extends Activity
             String AMAP_HDIFF_PATCH_PATH = SD_PATH+"/Amap_Android_hdiffpatch_patch";
             String AMAP_HDIFF_PATCH_GEN_PATH = SD_PATH+"/Amap_Android_V7.7.4.2128_GuanWang_hdiff.apk";
 
+            TimingLogger timings = new TimingLogger(TAG, "UpdateTask");
 
             File old_apk = new File(AMAP_OLD_PATH);
             if (!old_apk.exists()) {
                 Util.CopyAssets(getApplicationContext(), "Amap_Android_V7.3.0.2036_GuanWang.apk", AMAP_OLD_PATH);
+                timings.addSplit("CopyAssets Amap_Android_V7.3.0.2036_GuanWang.apk ");
             }
 
             File new_apk = new File(AMAP_NEW_PATH);
             if (!new_apk.exists()) {
                 Util.CopyAssets(getApplicationContext(), "Amap_Android_V7.7.4.2128_GuanWang.apk", AMAP_NEW_PATH);
+                timings.addSplit("CopyAssets Amap_Android_V7.7.4.2128_GuanWang.apk ");
             }
 
 
@@ -80,10 +86,12 @@ public class MainActivity extends Activity
 
             if(!new File(AMAP_BSDIFF_PATCH_PATH).exists()) {
                 bsDiffPatch.diff(AMAP_OLD_PATH, AMAP_NEW_PATH, AMAP_BSDIFF_PATCH_PATH);
+                timings.addSplit("bsDiffPatch.diff");
             }
 
             if(!new File(AMAP_BSDIFF_PATCH_GEN_PATH).exists()) {
                 bsDiffPatch.patch(AMAP_OLD_PATH, AMAP_BSDIFF_PATCH_PATH, AMAP_BSDIFF_PATCH_GEN_PATH);
+                timings.addSplit("bsDiffPatch.patch");
             }
 
 
@@ -93,11 +101,15 @@ public class MainActivity extends Activity
 
             if(!new File(AMAP_HDIFF_PATCH_PATH).exists()) {
                 hDiffPatch.diff(AMAP_OLD_PATH, AMAP_NEW_PATH, AMAP_HDIFF_PATCH_PATH);
+                timings.addSplit("hDiffPatch.diff");
             }
 
             if(!new File(AMAP_HDIFF_PATCH_GEN_PATH).exists()) {
                 hDiffPatch.patch(AMAP_OLD_PATH, AMAP_HDIFF_PATCH_PATH, AMAP_HDIFF_PATCH_GEN_PATH);
+                timings.addSplit("hDiffPatch.patch");
             }
+
+            timings.dumpToLog();
 
             return null;
         }
